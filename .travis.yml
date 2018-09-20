@@ -3,11 +3,9 @@ dist: trusty
 language: generic
 services:
   - docker
-script:
-  - docker build -t atem18/ansible-playbook:$TRAVIS_COMMIT .
-before_deploy:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+script: docker build -t atem18/ansible-playbook:$TRAVIS_COMMIT .
+before_deploy: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 deploy:
   provider: script
   skip_cleanup: true
-  - docker push atem18/kmdotnet:$TRAVIS_COMMIT
+  script: docker push atem18/kmdotnet:$TRAVIS_COMMIT

@@ -1,9 +1,0 @@
-sudo: required
-dist: trusty
-language: generic
-services:
-  - docker
-script:
-  - docker build -t atem18/ansible-playbook:$TRAVIS_COMMIT .
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push atem18/ansible-playbook:$TRAVIS_COMMIT

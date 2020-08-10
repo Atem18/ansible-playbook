@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-RUN apk add --no-cache ansible
+RUN apk add --no-cache ansible rsync
 
 ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false

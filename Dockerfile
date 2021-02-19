@@ -1,5 +1,5 @@
-FROM alpine:3.12.1
-RUN apk add --no-cache ansible=2.9.14-r0 openssh-client rsync
+FROM alpine:3.13.2
+RUN apk add --no-cache ansible=2.10.6-r0 openssh-client rsync
 ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
